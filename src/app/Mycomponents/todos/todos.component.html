@@ -1,0 +1,30 @@
+
+<h1  class="text-center mb-3" >To-Do-List By {{title}}</h1>
+<!-- <div  style="background-color: red; size: 100px; margin-bottom: 3px;">   &nbsp;      
+</div> -->
+<div class="container">
+<div>
+<app-add-todo-items (Addtodo)="addToDo($event)" ></app-add-todo-items>
+</div>
+<h3>Your Todos</h3>
+<div *ngIf="this.todos.length===0; else elseBlock">There are no todos to display.</div>
+<ng-template #elseBlock>
+    <div style="background-color: #c2b8b8; ">
+        <div style=" font-size: 25px; display:inline-flex; width:20%;
+        height:50%; ">
+          Title
+        </div>
+        <div style=" font-size: 25px; display:inline-flex;width:60%;
+        height:50%;">
+           Description
+          </div>
+          <div style=" font-size: 25px; display:inline-flex; width:20%;
+          height:50%; ">
+          Action
+           </div>
+        
+    </div>
+<div *ngFor="let todo of todos; index as i;">
+    <app-todo-items [todotest]="todo" [i]="i" (tododelete)="toDoDeletEvent($event)" (todocheckbox)="toDoDone($event)">todo</app-todo-items>
+</div>
+</ng-template>

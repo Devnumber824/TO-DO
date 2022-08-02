@@ -1,0 +1,54 @@
+
+<!-- <div class="my-3">
+         <h4 [ngClass]="{'strike':!todotest.Active}">{{todotest.title}}</h4>
+          <p [ngClass]="{'strike':!todotest.Active}">{{todotest.desc}}</p>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="onDone(todotest)" >
+            <label class="form-check-label" for="exampleCheck1" >Mark as Done</label>
+          </div>
+        <button class="btn btn-danger" (click)="onClick(todotest)">Delete</button>
+</div> -->
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48;
+        color: crimson;
+        
+      
+      }
+      </style>
+  </head>
+<div >
+  <div style=" font-size: 16px; display:inline-flex; width:20%;
+  height:50%; word-wrap: break-word;">
+    <p [ngClass]="{'strike':!todotest.Active}">{{todotest.title}}</p>
+  </div>
+  <div style=" font-size: 12px; display:inline-flex;width:60%;
+  height:50%; word-wrap: break-word;">
+     <p [ngClass]="{'strike':!todotest.Active}">{{todotest.desc}}</p>
+    </div>
+    <div style="  display:inline-flex; width:20%;
+    height:50%; ">
+    <div style="display:inline-flex; width: 30%;">
+      <input type="checkbox" class="form-check-input" id="todo{{i}}" (click)="onDone(todotest)" [checked]="!todotest.Active">
+      <label class="form-check-label" for="todo{{i}}" >Done</label>
+    </div>
+    
+     <!-- <button class="btn btn-danger" (click)="onClick(todotest)">Delete</button> -->
+     <div class="material-symbols-outlined" (click)="onClick(todotest)" style="cursor:pointer; " >
+      delete
+     </div>
+     </div>
+     <hr>
+  
+</div>
+</html>
+
+ 
+  

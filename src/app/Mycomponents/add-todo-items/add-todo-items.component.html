@@ -1,0 +1,20 @@
+<div class="p-3 mb-6  rounded-3" style=" background-color:skyblue">
+  <div class="container-fluid py-3">
+<div class="container">
+    <h3>Add Your Todos</h3>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="mb-3">
+          <label for="todolist" class="TODO">Title</label>
+          <input type="text" [(ngModel)]= "title" name="title" class="form-control" id="todolist" aria-describedby="emailHelp" maxlength = "100" placeholder="Enter the title of your task" >
+        </div>
+        <p id="Erroridtitle" style="color:red;"></p>
+        <div class="mb-3">
+          <label for="Desc" class="TODO">Description</label>
+          <input type="text" name="Desc" class="form-control" id="Desc" [(ngModel)]= "Desc" >
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+</div>
+</div>
+
